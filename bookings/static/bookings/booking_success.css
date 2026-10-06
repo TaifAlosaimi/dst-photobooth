@@ -1,0 +1,571 @@
+@import url('https://fonts.googleapis.com/css2?family=Ballet&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Reem+Kufi:wght@400;500;600&display=swap');
+
+:root {
+    --walnut: #6B4A33;
+    --taupe: #A6A39D;
+    --cream: #F4EFEA;
+
+    --display: "Reem Kufi", sans-serif;
+    --body: "IBM Plex Sans Arabic", sans-serif;
+    --english: "Bodoni Moda", serif;
+    --script: "Ballet", cursive;
+
+    --ease: cubic-bezier(.22, .61, .36, 1);
+}
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    min-height: 100%;
+    background: var(--cream);
+}
+
+
+body {
+    min-height: 100vh;
+
+    background: var(--cream);
+    color: var(--walnut);
+
+    font-family: var(--body);
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.success-page {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--cream);
+}
+
+
+/* =========================================================
+   FRAME
+   ========================================================= */
+
+.success-frame {
+    position: relative;
+
+    width: 100%;
+    max-width: 1380px;
+    min-height: calc(100vh - 56px);
+
+    border: 1px solid rgba(107, 74, 51, .55);
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 58px 7vw 45px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   HEADER / LOGO
+   ========================================================= */
+
+.success-header {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+
+.success-logo {
+    display: block;
+
+    width: 78px;
+    height: 78px;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.success-content {
+    flex: 1;
+
+    width: 100%;
+    max-width: 760px;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 45px 0 55px;
+}
+
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
+.success-eyebrow {
+    margin-bottom: 28px;
+
+    color: var(--taupe);
+
+    font-family: var(--english);
+
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: .24em;
+
+    direction: ltr;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   ARABIC TITLE
+   ========================================================= */
+
+.success-title {
+    color: var(--walnut);
+
+    font-family: var(--display);
+
+    font-size: clamp(30px, 4vw, 52px);
+    font-weight: 500;
+
+    line-height: 1.5;
+
+    text-wrap: balance;
+}
+
+
+.success-title span {
+    color: var(--taupe);
+
+    font-family: var(--english);
+
+    font-size: .82em;
+    font-weight: 500;
+
+    letter-spacing: .04em;
+
+    direction: ltr;
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.success-message {
+    margin-top: 20px;
+
+    color: var(--walnut);
+
+    font-family: var(--body);
+
+    font-size: 14px;
+    font-weight: 400;
+
+    line-height: 2.1;
+
+    text-wrap: balance;
+}
+
+
+/* =========================================================
+   THANK YOU
+   ========================================================= */
+
+.thank-you {
+    margin-top: 34px;
+
+    color: var(--walnut);
+
+    font-family: var(--script);
+
+    font-size: clamp(52px, 6vw, 84px);
+    font-weight: 400;
+
+    line-height: .8;
+
+    letter-spacing: 0;
+
+    direction: ltr;
+    white-space: nowrap;
+
+    transform: rotate(-2deg);
+
+    opacity: .96;
+}
+
+
+/* =========================================================
+   ENGLISH SUPPORTING TEXT
+   ========================================================= */
+
+.success-english {
+    margin-top: 34px;
+
+    color: var(--taupe);
+
+    font-family: var(--english);
+
+    font-size: 13px;
+    font-weight: 500;
+
+    letter-spacing: .13em;
+
+    direction: ltr;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.success-footer {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+
+.footer-line {
+    width: 54px;
+    height: 1px;
+
+    margin-bottom: 20px;
+
+    background: var(--taupe);
+
+    opacity: .65;
+}
+
+
+.success-footer p {
+    color: var(--taupe);
+
+    font-family: var(--english);
+
+    font-size: 10px;
+    font-weight: 500;
+
+    letter-spacing: .17em;
+
+    direction: ltr;
+
+    text-align: center;
+}
+
+
+.success-footer strong {
+    display: block;
+
+    margin-top: 6px;
+
+    color: var(--walnut);
+
+    font-weight: 500;
+
+    letter-spacing: .12em;
+}
+
+
+/* =========================================================
+   SUBTLE ENTRY
+   ========================================================= */
+
+.success-frame {
+    animation:
+        successFrameReveal .9s var(--ease) both;
+}
+
+
+.success-logo {
+    animation:
+        successLogoReveal .9s .1s var(--ease) both;
+}
+
+
+.success-content {
+    animation:
+        successContentReveal 1s .18s var(--ease) both;
+}
+
+
+.success-footer {
+    animation:
+        successFooterReveal .9s .3s var(--ease) both;
+}
+
+
+@keyframes successFrameReveal {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes successLogoReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes successContentReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes successFooterReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .success-page {
+        padding: 16px;
+    }
+
+
+    .success-frame {
+        min-height: calc(100vh - 32px);
+
+        padding:
+            38px 24px
+            30px;
+    }
+
+
+    .success-logo {
+        width: 64px;
+        height: 64px;
+    }
+
+
+    .success-content {
+        padding: 35px 0 45px;
+    }
+
+
+    .success-eyebrow {
+        margin-bottom: 20px;
+
+        font-size: 9px;
+
+        letter-spacing: .18em;
+    }
+
+
+    .success-title {
+        font-size: clamp(26px, 8vw, 36px);
+
+        line-height: 1.65;
+    }
+
+
+    .success-message {
+        margin-top: 16px;
+
+        font-size: 12px;
+
+        line-height: 2;
+    }
+
+
+
+    .thank-you {
+        margin-top: 28px;
+
+        font-size: clamp(46px, 12vw, 68px);
+
+        white-space: nowrap;
+    }
+
+}
+
+    .success-english {
+        margin-top: 28px;
+
+        font-size: 10px;
+
+        letter-spacing: .08em;
+    }
+
+
+    .footer-line {
+        width: 42px;
+
+        margin-bottom: 16px;
+    }
+
+
+    .success-footer p {
+        font-size: 9px;
+
+        letter-spacing: .12em;
+    }
+
+
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+    .success-page {
+        padding: 12px;
+    }
+
+
+    .success-frame {
+        min-height: calc(100vh - 24px);
+
+        padding:
+            30px 19px
+            25px;
+    }
+
+
+    .success-logo {
+        width: 58px;
+        height: 58px;
+    }
+
+
+    .success-content {
+        padding: 28px 0 35px;
+    }
+
+
+    .success-eyebrow {
+        font-size: 8px;
+    }
+
+
+    .success-title {
+        font-size: 25px;
+    }
+
+
+    .success-message {
+        font-size: 11px;
+    }
+
+
+    .thank-you {
+        margin-top: 36px;
+
+        font-size: 18vw;
+    }
+
+
+    .success-english {
+        font-size: 9px;
+    }
+
+
+    .success-footer p {
+        font-size: 8px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .success-frame,
+    .success-logo,
+    .success-content,
+    .success-footer {
+        animation: none;
+    }
+
+}

@@ -1,0 +1,459 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'bookings/booking.css' %}">
+    <title>الحجز | DST</title>
+
+</head>
+
+
+<body>
+
+<div class="booking-page">
+
+
+    <!-- HEADER -->
+
+    <!-- NAVBAR -->
+
+<header class="site-header">
+
+    <div class="nav-container">
+
+        <!-- LOGO -->
+
+        <a href="/" class="site-logo" aria-label="DST - الرئيسية">
+
+            <img
+                src="{% static 'bookings/images/logo.webp' %}"
+                alt="DST"
+            >
+
+        </a>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="main-nav" aria-label="التنقل الرئيسي">
+
+            <a href="/" class="nav-link">
+                الرئيسية
+            </a>
+
+            <a href="/about/" class="nav-link">
+                من نحن
+            </a>
+
+        
+
+        </nav>
+
+
+    </div>
+
+</header>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        
+
+       <h1>
+            احجز تجربتك  <span>مع <strong>DST</strong></span>
+        </h1>
+        <p class="hero-description">
+            شاركنا تفاصيل مناسبتك، واختر الباقة المناسبة لك.
+            سنتواصل معك لمراجعة التفاصيل وتأكيد الحجز.
+        </p>
+
+        <div class="hero-english">
+            YOUR MOMENT. YOUR STORY. YOUR WAY.
+        </div>
+
+    </section>
+
+
+    <form method="POST" class="booking-form">
+
+        {% csrf_token %}
+
+
+       <!-- =========================
+     PACKAGES — FIRST
+========================== -->
+<section class="form-section">
+
+    <div class="section-heading">
+     
+
+        <h2>
+            اختر باقتك
+        </h2>
+    </div>
+
+
+    <div class="package-grid">
+
+        {% for package in form.package.field.queryset %}
+
+        <div class="package-option">
+
+            <input
+                type="radio"
+                name="package"
+                value="{{ package.pk }}"
+                id="package-{{ package.pk }}"
+                {% if form.package.value|stringformat:"s" == package.pk|stringformat:"s" %}
+                    checked
+                {% endif %}
+            >
+
+            <label
+                for="package-{{ package.pk }}"
+                class="package-card"
+            >
+
+                <div class="package-top">
+
+                   
+                    <span class="package-check"></span>
+
+                </div>
+
+
+                <div class="package-main">
+
+                    <h3>
+                        {{ package.name }}
+                    </h3>
+
+                    <div class="package-photos">
+                        {{ package.photo_count }} صورة
+
+                        {% if package.extra_photos %}
+                            + {{ package.extra_photos }} مجانًا
+                        {% endif %}
+                    </div>
+
+
+                    <div class="package-description">
+
+                        {% if package.description %}
+
+                            {{ package.description }}
+
+                        {% else %}
+
+                            شامل حامل الصور (Card) بثيم المناسبة.
+
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+
+                <div class="package-bottom">
+
+                    <div class="package-duration">
+                        {{ package.duration_hours }} ساعات
+                    </div>
+
+                    <div class="package-price">
+                        {{ package.price|floatformat:0 }}
+
+                        <small>
+                            ريال
+                        </small>
+                    </div>
+
+                </div>
+
+            </label>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+
+    {% for error in form.package.errors %}
+
+        <div class="error-message">
+            {{ error }}
+        </div>
+
+    {% endfor %}
+
+</section>
+
+
+        <!-- =========================
+             EVENT DETAILS
+        ========================== -->
+
+        <section class="form-section">
+
+            <div class="section-heading">
+
+                
+                <h2>
+تفاصيل المناسبة 
+                </h2>
+
+            </div>
+
+
+            <div class="input-grid">
+
+
+                <div class="field">
+
+                    <label for="{{ form.event_type.id_for_label }}">
+                        نوع المناسبة :
+                    </label>
+
+                    {{ form.event_type }}
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="{{ form.event_date.id_for_label }}">
+                        تاريخ المناسبة :
+                    </label>
+
+                    {{ form.event_date }}
+
+                </div>
+
+
+                <div class="field full">
+
+                    <label for="{{ form.event_location.id_for_label }}">
+                        موقع المناسبة :
+                    </label>
+
+                    {{ form.event_location }}
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CONTACT
+        ========================== -->
+
+        <section class="form-section">
+
+            <div class="section-heading">
+
+             
+                <h2>
+                    بيانات التواصل :
+                </h2>
+
+            </div>
+
+
+            <div class="input-grid">
+
+
+                <div class="field">
+
+                    <label for="{{ form.name.id_for_label }}">
+                        الاسم :
+                    </label>
+
+                    {{ form.name }}
+
+                    {% for error in form.name.errors %}
+                        <div class="error-message">
+                            {{ error }}
+                        </div>
+                    {% endfor %}
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="{{ form.phone.id_for_label }}">
+                        رقم الجوال :
+                    </label>
+
+                    {{ form.phone }}
+
+                    {% for error in form.phone.errors %}
+                        <div class="error-message">
+                            {{ error }}
+                        </div>
+                    {% endfor %}
+
+                </div>
+
+
+                <div class="field full">
+
+                    <label for="{{ form.email.id_for_label }}">
+                        البريد الإلكتروني <span class="optional-label">(اختياري)</span> :
+                    </label>
+
+                    {{ form.email }}
+
+                    {% for error in form.email.errors %}
+                        <div class="error-message">
+                            {{ error }}
+                        </div>
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             NOTES
+        ========================== -->
+
+        <section class="form-section">
+
+            <div class="section-heading">
+
+               
+
+                <h2>
+                    تفاصيل إضافية 
+                </h2>
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="{{ form.notes.id_for_label }}">
+                    ملاحظاتك :
+                </label>
+
+                {{ form.notes }}
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SUBMIT
+        ========================== -->
+
+        <section class="submit-section">
+
+            <button
+                type="submit"
+                class="submit-button"
+            >
+                إرسال طلب الحجز
+            </button>
+
+        </section>
+
+
+    </form>
+
+</div>
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+<footer class="dst-footer">
+
+    <div class="footer-ornament" aria-hidden="true">
+        <span></span>
+        <i></i>
+        <span></span>
+    </div>
+
+    <div class="footer-brand">
+        DST PHOTOBOOTH
+    </div>
+
+    <p class="footer-tagline">
+        لتخليد لحظاتكم طوال السنين
+    </p>
+
+    <nav class="footer-socials" aria-label="Social Media">
+
+        <a href="https://www.instagram.com/dst.photobooth"
+           target="_blank"
+           rel="noopener noreferrer">
+            Instagram
+        </a>
+
+        <span>·</span>
+
+        <a href="https://www.tiktok.com/@dst.photobooth"
+           target="_blank"
+           rel="noopener noreferrer">
+            TikTok
+        </a>
+
+        <span>·</span>
+
+        <a href="https://snapchat.com/t/7Dnwzipi"
+           target="_blank"
+           rel="noopener noreferrer">
+            Snapchat
+        </a>
+
+        <span>·</span>
+
+        <a href="https://wa.me/966501169747"
+           target="_blank"
+           rel="noopener noreferrer">
+            WhatsApp
+        </a>
+
+    </nav>
+
+    <div class="footer-line"></div>
+
+    <div class="footer-bottom">
+
+        <div class="footer-copyright">
+            DST Photobooth © 2026
+            <span>·</span>
+            جميع الحقوق محفوظة
+        </div>
+
+        <div class="footer-credit">
+            Designed &amp; Developed by Eng. Taif Alosaimi
+        </div>
+
+    </div>
+
+</footer>
+
+</div>
+
+</body>
+
+</html>

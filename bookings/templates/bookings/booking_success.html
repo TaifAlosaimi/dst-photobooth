@@ -1,0 +1,114 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{% static 'bookings/booking_success.css' %}"
+    >
+
+    <title>شكرًا لكم | DST Photobooth</title>
+
+</head>
+
+
+<body>
+
+    <main class="success-page">
+
+        <div class="success-frame">
+
+
+            <!-- =========================
+                 LOGO
+            ========================== -->
+
+            <header class="success-header">
+
+                <img
+                    src="{% static 'bookings/images/logo.webp' %}"
+                    alt="DST"
+                    class="success-logo"
+                >
+
+            </header>
+
+
+            <!-- =========================
+                 MAIN MESSAGE
+            ========================== -->
+
+            <section class="success-content">
+
+
+                <div class="success-eyebrow">
+                    BOOKING RECEIVED
+                </div>
+
+
+                <h1 class="success-title">
+شكراً&nbsp;&nbsp;لاختياركم
+                    <span>DST</span>
+                </h1>
+
+
+                <p class="success-message">
+                    تم استلام طلبكم بنجاح،
+                    <br>
+                    وسنتواصل معكم قريبًا لتأكيد التفاصيل.
+                </p>
+
+
+                <!-- =========================
+                     THANK YOU
+                ========================== -->
+
+                <div
+                    class="thank-you"
+                    aria-label="Thank you"
+                >
+                    Thank you
+                </div>
+
+
+                <p class="success-english">
+                    Thank you for choosing DST.
+                </p>
+
+
+            </section>
+
+
+            <!-- =========================
+                 FOOTER
+            ========================== -->
+
+            <footer class="success-footer">
+
+                <span class="footer-line"></span>
+
+                <p>
+                    With love,
+                    <strong>DST Photobooth</strong>
+                </p>
+
+            </footer>
+
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

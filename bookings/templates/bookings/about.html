@@ -1,0 +1,355 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'bookings/about.css' %}">
+
+    <title>من نحن | DST</title>
+</head>
+
+
+<body>
+
+<div class="about-page">
+
+
+    <!-- =====================================================
+         SHARED NAVBAR
+         ===================================================== -->
+
+    <header class="site-header">
+
+        <div class="nav-container">
+
+
+            <!-- LOGO -->
+
+            <a href="#" class="site-logo">
+
+                <img
+                    src="{% static 'bookings/images/logo.webp' %}"
+                    alt="DST"
+                >
+
+            </a>
+
+
+            <!-- NAVIGATION -->
+
+
+              <nav class="main-nav">
+
+    <a href="/" class="nav-link">
+        الرئيسية
+    </a>
+
+    <a href="/about/" class="nav-link active">
+        من نحن
+    </a>
+
+    
+</nav>
+
+
+            <!-- BOOKING -->
+
+             <!-- BOOKING CTA -->
+
+            <a href="/booking/" class="nav-booking">
+
+                <span>
+                    احجز تجربتك
+                </span>
+
+                <span class="nav-arrow">
+                    ↗
+                </span>
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+
+<section class="about-hero">
+
+    <div class="hero-content">
+
+        <div class="hero-copy">
+
+            <h1>
+من نحن؟            </h1>
+
+            <p class="hero-description">
+                DST هي خدمة تصوير مناسبات تجمع بين تجربة الـPhotobooth
+                والتصوير الاحترافي.
+                نركز على تقديم تجربة مختلفة للضيوف، مع اهتمام بالتفاصيل
+                وجودة الصور، بحيث تكون كل لقطة ذكرى تستحق الاحتفاظ بها.
+            </p>
+
+          
+
+        </div>
+
+
+        <div class="hero-image">
+
+            <img
+                src="{% static 'bookings/images/girl2.jpg' %}"
+                alt="DST"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+    
+         
+
+
+                       
+
+
+        <!-- =====================================================
+             WHAT WE OFFER
+             ===================================================== -->
+
+        <section class="about-section experience-section">
+
+           
+
+
+            <div class="section-content reverse">
+
+                <div class="section-image">
+
+                    <img
+                        src="{% static 'bookings/images/card2.jpg' %}"
+                        alt="DST"
+                    >
+
+                </div>
+
+
+                <div class="section-text">
+
+                    <span class="section-label">
+                        WHAT WE OFFER
+                    </span>
+
+                    <h2>
+                          التجربة
+                    </h2>
+
+                    <p>
+                        نقدم تجربة Photobooth متكاملة تشمل التصوير الاحترافي،
+                        تجهيز ركن التصوير، والطباعة الفورية، مع إمكانية تخصيص
+                        التجربة بما يناسب هوية وتفاصيل مناسبتكم.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             WHERE WE WORK
+             ===================================================== -->
+
+        <section class="about-section location-section">
+
+           
+
+
+            <div class="section-content">
+
+                <div class="section-text">
+
+                    <span class="section-label">
+                        WHERE WE WORK
+                    </span>
+
+                    <h2>
+                        أين نتواجد ؟
+                    </h2>
+
+                    <p>
+                        نقدم خدماتنا في الرياض ، ونسعى لتغطية
+                        مناسباتكم في مواقع مختلفة حسب نطاق الخدمة وتفاصيل المناسبة.
+                    </p>
+
+                </div>
+
+
+                <div class="section-image">
+
+                    <img
+                        src="{% static 'bookings/images/card3.jpg' %}"
+                        alt="DST"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             WHAT MAKES US DIFFERENT
+             ===================================================== -->
+
+        <section class="about-section difference-section">
+
+          
+
+            <div class="difference-content">
+
+                <span class="section-label">
+                    WHAT MAKES US DIFFERENT
+                </span>
+
+                <h2>
+                    مصورات محترفات، ليس مجرد Photobooth
+                </h2>
+
+
+                <div class="difference-list">
+
+                    <p>
+                        مع التركيز على
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            الاهتمام بالتفاصيل
+                        </li>
+
+                        <li>
+                            تخصيص التجربة
+                        </li>
+
+                        <li>
+                            جودة التصوير والإخراج
+                        </li>
+
+                    </ul>
+
+                </div>
+               <div class="section-image">
+
+                    <img
+                        src="{% static 'bookings/images/card1.jpg' %}"
+                        alt="DST"
+                    >
+
+                </div>
+            </div>
+
+        </section>
+
+
+
+
+    </main>
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer class="dst-footer">
+
+    <div class="footer-ornament" aria-hidden="true">
+        <span></span>
+        <i></i>
+        <span></span>
+    </div>
+
+    <div class="footer-brand">
+        DST PHOTOBOOTH
+    </div>
+
+    <p class="footer-tagline">
+        لتخليد لحظاتكم طوال السنين
+    </p>
+
+    <nav class="footer-socials" aria-label="Social Media">
+
+        <a href="https://www.instagram.com/dst.photobooth"
+           target="_blank"
+           rel="noopener noreferrer">
+            Instagram
+        </a>
+
+        <span>·</span>
+
+        <a href="https://www.tiktok.com/@dst.photobooth"
+           target="_blank"
+           rel="noopener noreferrer">
+            TikTok
+        </a>
+
+        <span>·</span>
+
+        <a href="https://snapchat.com/t/7Dnwzipi"
+           target="_blank"
+           rel="noopener noreferrer">
+            Snapchat
+        </a>
+
+        <span>·</span>
+
+        <a href="https://wa.me/966501169747"
+           target="_blank"
+           rel="noopener noreferrer">
+            WhatsApp
+        </a>
+
+    </nav>
+
+    <div class="footer-line"></div>
+
+    <div class="footer-bottom">
+
+        <div class="footer-copyright">
+            DST Photobooth © 2026
+            <span>·</span>
+            جميع الحقوق محفوظة
+        </div>
+
+        <div class="footer-credit">
+            Designed &amp; Developed by Eng. Taif Alosaimi
+        </div>
+
+    </div>
+
+</footer>
+
+</div>
+
+
+
+</body>
+
+</html>
