@@ -408,7 +408,7 @@ The current version focuses on:
 
 ### Eng. Taif Alosaimi
 
-Physics graduate and Full-Stack Developer focused on building practical web applications using Python and Django.
+Full-Stack Developer focused on building practical web applications using Python and Django.
 
 This project reflects my transition into software development and my hands-on experience building full-stack applications.
 
